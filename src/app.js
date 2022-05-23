@@ -42,7 +42,6 @@ app.post('/payment', (req, res) => {
     res.render('payment', {message: 'Payment Successful', account: accounts.credit});
 });
 
-
 app.get('/profile', (req, res) => {
     res.render('profile', { user: users[0] });
 });
