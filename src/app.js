@@ -1,9 +1,8 @@
 const fs = require('fs');
 const path = require('path');
-const { readFileSync } = require('fs');
 
 const express = require('express');
-const app = express();
+const app = new express();
 
 const { accounts, users, writeJSON } = require('./data.js');
 
@@ -13,10 +12,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.urlencoded({extended: true}));
 
-app.get('/', (req, res) => {
-    res.render('index', { title: 'Account Summary',
-    accounts: accounts});
-});
+app.get('/', (req, res) => res.render('index', { title: 'Account Summary', accounts: accounts }));
 
 app.get('/savings', (req, res) => res.render('account', { account: accounts.savings }));
 
