@@ -39,6 +39,4 @@ app.get('/profile', (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log('PS Project Running on port 3000!');
-});
-  
+    console.log('PS Project Running on port 3000!')});
