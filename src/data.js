@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const accountData = readFileSync("./src/json/accounts.json", "utf8");
+const accountData = fs.readFileSync(path.join(__dirname, 'json', 'accounts.json'), 'utf8');
 const accounts = JSON.parse(accountData);
 
-const userData = readFileSync("./src/json/users.json", "utf8");
+const userData = fs.readFileSync(path.join(__dirname, 'json', 'users.json'), 'utf8');
 const users = JSON.parse(userData);
 
 const writeJSON = () => {
